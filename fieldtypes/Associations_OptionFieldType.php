@@ -34,7 +34,8 @@ class Associations_OptionFieldType extends BaseFieldType
 	 */
 	public function getSettingsHtml()
 	{
-		foreach (craft()->fields->getAllFields('id') as $id=>$field)
+		$fields = [];
+        foreach (craft()->fields->getAllFields('id') as $id=>$field)
 		{
             $ft = craft()->fields->getFieldType($field->type);
             if (is_subclass_of($ft, 'Craft\BaseOptionsFieldType'))
